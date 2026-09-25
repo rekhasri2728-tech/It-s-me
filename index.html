@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Fraud Pursha 💗</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,serif;background:linear-gradient(135deg,#ffe4ec,#fff5f8,#fce1f0);color:#6d2948;min-height:100vh;overflow-x:hidden}
+.screen{min-height:100vh;display:none;align-items:center;justify-content:center;padding:25px;text-align:center;position:relative}
+.screen.active{display:flex}
+.card{max-width:650px;width:100%;background:rgba(255,255,255,.82);border-radius:30px;padding:35px 24px;box-shadow:0 15px 45px rgba(120,40,75,.16);backdrop-filter:blur(8px)}
+h1{font-size:clamp(2.2rem,8vw,4.3rem);margin:10px 0;color:#c93670}
+h2{font-size:clamp(1.7rem,6vw,2.8rem)}
+p{font-size:1.15rem;line-height:1.7}
+button{border:0;border-radius:999px;padding:14px 28px;font-size:1.05rem;font-weight:bold;cursor:pointer;margin:10px;transition:.2s;box-shadow:0 7px 18px rgba(150,50,90,.18)}
+.yes{background:#e83f7d;color:white}
+.no{background:#fff;color:#b83263;border:2px solid #f3a5c2;position:relative}
+button:hover{transform:scale(1.06)}
+.small{font-size:.9rem;opacity:.7}
+.heart{position:fixed;bottom:-30px;font-size:22px;animation:float 7s linear infinite;pointer-events:none}
+@keyframes float{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+#gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+#gallery img{width:100%;height:190px;object-fit:cover;border-radius:18px;background:#f7ccd9}
+.letter{text-align:left;background:#fff7fa;padding:22px;border-radius:20px;line-height:1.8;font-size:1.08rem}
+.big-heart{font-size:70px;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+.confetti{position:fixed;top:-20px;font-size:20px;animation:fall 4s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(500deg);opacity:0}}
+@media(max-width:500px){#gallery{grid-template-columns:1fr 1fr}#gallery img{height:150px}.card{padding:28px 17px}}
+</style>
+</head>
+<body>
 
+<div id="s1" class="screen active">
+  <div class="card">
+    <div class="big-heart">💗</div>
+    <h2>Heyyy Fraud Pursha...</h2>
+    <p>Someone made a tiny little surprise just for you. 👀</p>
+    <p class="small">Don't rush... there's a question waiting for you.</p>
+    <button class="yes" onclick="show('s2')">Open your surprise 💌</button>
+  </div>
+</div>
+
+<div id="s2" class="screen">
+  <div class="card">
+    <div style="font-size:55px">🥺💕</div>
+    <h2>Will you stay with me forever?</h2>
+    <p>Think carefully, Fraud Pursha... 😌</p>
+    <button class="yes" onclick="birthday()">YES ❤️</button>
+    <button id="noBtn" class="no">NO 😏</button>
+    <p id="error" class="small"></p>
+  </div>
+</div>
+
+<div id="s3" class="screen">
+  <div class="card">
+    <div style="font-size:60px">🎂🎉💗</div>
+    <h1>Happy Birthday!</h1>
+    <h2>My Fraud Pursha 😘</h2>
+    <p>Okayyy... you chose YES. So here's your real surprise! 🥹💟</p>
+    <button class="yes" onclick="show('s4')">Continue 💕</button>
+  </div>
+</div>
+
+<div id="s4" class="screen">
+  <div class="card">
+    <h2>Our little memories 📸</h2>
+    <p>Every picture has a little piece of us. 💗</p>
+    <div id="gallery">
+      <img src="photos/photo1.jpg" alt="Memory 1">
+      <img src="photos/photo2.jpg" alt="Memory 2">
+      <img src="photos/photo3.jpg" alt="Memory 3">
+      <img src="photos/photo4.jpg" alt="Memory 4">
+      <img src="photos/photo5.jpg" alt="Memory 5">
+      <img src="photos/photo6.jpg" alt="Memory 6">
+      <img src="photos/photo7.jpg" alt="Memory 7">
+      <img src="photos/photo8.jpg" alt="Memory 8">
+      <img src="photos/photo9.jpg" alt="Memory 9">
+      <img src="photos/photo10.jpg" alt="Memory 10">
+    </div>
+    <button class="yes" onclick="show('s5')">One last thing... 💌</button>
+  </div>
+</div>
+
+<div id="s5" class="screen">
+  <div class="card">
+    <div style="font-size:55px">💌</div>
+    <h2>A little message for you</h2>
+    <div class="letter">
+      Happy birthday my fraud pursha!!! 🥹❤️<br><br>
+      I love you lots. I will take care of you and always be there for youuu 😘💟...<br><br>
+      No matter how many silly fights, laughs, memories and crazy moments come our way, I just want to keep making them with you. 🫶🏻<br><br>
+      Happy birthday once again, my favourite fraud! 🎂💕
+    </div>
+    <button class="yes" onclick="show('s6');confetti()">Forever? 🥺❤️</button>
+  </div>
+</div>
+
+<div id="s6" class="screen">
+  <div class="card">
+    <div class="big-heart">❤️</div>
+    <h1>Always you.</h1>
+    <p>Happy Birthday, Fraud Pursha. 🎂</p>
+    <p>Here's to many more birthdays, memories and moments together. 💕</p>
+    <p style="font-size:1.4rem">Love,<br><b>Poriki 💟</b></p>
+  </div>
+</div>
+
+<script>
+function show(id){
+ document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+}
+const no=document.getElementById('noBtn');
+const error=document.getElementById('error');
+no.addEventListener('click',()=>{
+ error.textContent="Error!! Try again 😂❤️";
+ const x=Math.random()*180-90, y=Math.random()*120-60;
+ no.style.transform=`translate(${x}px,${y}px)`;
+});
+function birthday(){
+ show('s3'); confetti();
+}
+function confetti(){
+ const items=['💗','💕','💖','🎉','✨','🎂','❤️'];
+ for(let i=0;i<45;i++){
+  const e=document.createElement('div');e.className='confetti';
+  e.textContent=items[Math.floor(Math.random()*items.length)];
+  e.style.left=Math.random()*100+'vw';
+  e.style.animationDelay=Math.random()*1.5+'s';
+  document.body.appendChild(e);
+  setTimeout(()=>e.remove(),5000);
+ }
+}
+setInterval(()=>{
+ const h=document.createElement('div');h.className='heart';h.textContent='💗';
+ h.style.left=Math.random()*100+'vw';h.style.animationDuration=(5+Math.random()*4)+'s';
+ document.body.appendChild(h);setTimeout(()=>h.remove(),9000);
+},900);
+</script>
+<div class="signature">Forever yours,<br><b>Poriki pondati 💗😘</b></div></body>
+</html>
